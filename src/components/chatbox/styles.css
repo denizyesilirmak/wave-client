@@ -1,0 +1,20 @@
+.chatbox-container {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    background-color: var(--background-default);
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.chatbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--light-gray);
+    border-radius: 14px;
+    overflow: hidden;
+}

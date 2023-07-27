@@ -1,0 +1,19 @@
+/* themes */
+
+:root {
+    --background-default: #ffffff;
+    --border-color-default: #e6e6e6;
+    --primary-color: #9ae3eb;
+    --secondary-color: #539dc5;
+    --tertiary-color: #2c3e50;
+    --light-gray: #f1f1f5;
+    --lighter-gray: #f7f7f9;
+
+    --font-family-default: 'Roboto', sans-serif;
+    --font-size-default: 16px;
+    --font-weight-default: 400;
+
+    --font-family-heading: 'Roboto', sans-serif;
+    --font-size-heading: 20px;
+    --font-weight-heading: 700;
+}

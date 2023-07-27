@@ -1,0 +1,133 @@
+.create-session-container {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+
+}
+
+.create-session {
+    background: var(--light-gray);
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    padding: 12px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* hide scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+    scrollbar-width: none;
+
+    /* Safari and Chrome */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.contacts {
+    background: red;
+    max-width: 100%;
+    height: 100%;
+    background-color: var(--background-default);
+    border-radius: 12px;
+    padding: 10px;
+    overflow: scroll;
+}
+
+.contacts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: --var(font-family);
+    font-size: 1.2rem;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px;
+    margin: 10px 0px;
+    border: 1px solid var(--border-color-default);
+    flex-direction: column;
+    opacity: 0.7;
+    user-select: none;
+    cursor: grab;
+}
+
+.contact:hover {
+    opacity: 1;
+}
+
+.contact-name {
+    font-family: --var(font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.contact-email {
+    font-family: --var(font-family);
+    font-size: 0.8rem;
+}
+
+.contact-role {
+    font-family: --var(font-family);
+    font-size: 0.6rem;
+}
+
+
+/* when contact grabbed   */
+.contact.dragging {
+    opacity: 0.1;
+    cursor: grabbing;
+    border: 1px solid var(--primary-color);
+    transition: all 1s;
+}
+
+.contact.empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0px;
+    border: 1px dashed var(--border-color-default);
+    flex-direction: column;
+    opacity: 0.7;
+    user-select: none;
+    cursor: grab;
+    height: 80px;
+    pointer-events: none;
+}
+
+.contact.new {
+    border: 1px dashed green;
+    animation: newUserAnim 1s 1;
+}
+
+@keyframes newUserAnim {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.add-person-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
