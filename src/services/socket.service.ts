@@ -37,6 +37,7 @@ class SocketService {
     });
 
     this.socket.on("connect_error", (error) => {
+      console.log("Socket connect_error", error);
       return;
     });
 

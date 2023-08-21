@@ -1,11 +1,16 @@
 import { create } from "zustand";
 
-export const useOnlineUsersStore = create((set) => ({
+interface OnlineUsersStore {
+  onlineUsers: unknown;
+  setOnlineUsers: (users: unknown) => void;
+}
+
+export const useOnlineUsersStore = create<OnlineUsersStore>((set) => ({
   onlineUsers: {},
   setOnlineUsers: (users) => set({ onlineUsers: users }),
 }));
 
-export const setOnlineUsers = (users) => {
+export const setOnlineUsers = (users: unknown) => {
   console.log("setOnlineUsers", users);
   useOnlineUsersStore.setState({ onlineUsers: users });
 };
