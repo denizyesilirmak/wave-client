@@ -12,6 +12,7 @@ export const colors = [
   "lime",
 ];
 
+// This function is used to generate a random color for each user
 export const colorGenerator = (str: string) => {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {

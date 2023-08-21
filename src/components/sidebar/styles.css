@@ -29,7 +29,14 @@
     display: flex;
     opacity: 0.8;
     transition: opacity 0.3s ease-in-out;
+}
 
+.sidebar-header .sidebar-logo.active {
+    opacity: 1;
+}
+
+.sidebar-header .sidebar-logo.passive {
+    filter: grayscale(100%);
 }
 
 .sidebar-header .sidebar-logo:hover {
@@ -84,7 +91,7 @@
     justify-content: center;
 }
 
-.sidebar-item-label{
+.sidebar-item-label {
     font-size: 12px;
     color: var(--secondary-color);
     margin-top: 5px;
