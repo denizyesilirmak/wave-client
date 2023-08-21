@@ -1,0 +1,97 @@
+.login-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    perspective: 1000px;
+}
+
+.login-screen-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color-default);
+    border-radius: 10px;
+    color: var(--tertiary-color);
+    text-align: center;
+    padding: 30px;
+    background: var(--background-default);
+}
+
+.login-panel-outline{
+    transform: rotate(0deg) rotateX(0deg) translateZ(10px);
+    box-sizing: content-box;
+    width: 50%;
+    max-width: 400px;
+    padding: 0px;
+    border-radius: 10px;
+    transition: padding 0.4s ease, transform 0.2s ease;
+}
+
+.login-panel-outline.active{
+    padding: 4px;
+    background-size: 200% 100%;
+    animation: login-panel-outline-animation 2s ease infinite alternate;
+    background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color), var(--tertiary-color), var(--secondary-color), var(--primary-color));
+}
+
+@keyframes login-panel-outline-animation {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+}
+
+
+.login-screen-logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.login-screen-input {
+    width: 100%;
+    border: 1px solid var(--border-color-default);
+    padding: 10px 15px 10px 15px;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.login-screen-input:focus {
+    border: 1px solid var(--primary-color);
+}
+
+.login-screen-button {
+    width: 100%;
+    border: none;
+    padding: 10px 15px 10px 15px;
+    outline: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: var(--primary-color);
+    color: var(--background-default);
+    font-weight: var(--font-weight-heading);
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.login-screen-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.login-screen-button:focus {
+    background-color: var(--secondary-color);
+    outline: none;
+}
+
+.legal-text {
+    font-size: 12px;
+    margin-top: 10px;
+}
