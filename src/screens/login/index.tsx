@@ -1,10 +1,13 @@
 import "./styles.css";
 import WaveLogo from "../../assets/images/logo-small.png";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+
+  const navigate = useNavigate();
 
   const handleMouseMove = (e: MouseEvent) => {
     const container = containerRef.current;
@@ -25,12 +28,11 @@ const Login = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-
-
   const handleLogin = () => {
     setLoading(true);
     const timeout = setTimeout(() => {
       setLoading(false);
+      navigate("/create-session");
     }, 2000);
     return () => clearTimeout(timeout);
   };

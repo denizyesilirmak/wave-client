@@ -1,6 +1,8 @@
+import { useOnlineUsersStore } from "../../store/onlineUsersStore";
 import ChatInput from "../chat-input";
 import ChatMessages from "../chat-messages";
 import ChatBoxHeader from "../chatbox-header";
+import OnlineUsers from "../online-users";
 import "./styles.css";
 
 const ChatBox = () => {
@@ -11,6 +13,7 @@ const ChatBox = () => {
           title="Group Chat"
           writingList={["Deniz", "Kemal", "Pelin", "Mehmet", "Ayşe"]}
         />
+        <OnlineUsers />
         <ChatMessages />
         <ChatInput />
       </div>
