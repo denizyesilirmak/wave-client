@@ -1,5 +1,5 @@
 import "./styles.css";
-import WaveLogo from "../../assets/images/logo-small.png";
+import WaveLogo from "@assets/images/logo-small.png";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 

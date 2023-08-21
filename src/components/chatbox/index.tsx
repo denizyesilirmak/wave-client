@@ -1,8 +1,8 @@
-import { useOnlineUsersStore } from "../../store/onlineUsersStore";
-import ChatInput from "../chat-input";
-import ChatMessages from "../chat-messages";
-import ChatBoxHeader from "../chatbox-header";
-import OnlineUsers from "../online-users";
+import ChatInput from "@components/chat-input";
+import ChatMessages from "@components/chat-messages";
+import ChatBoxHeader from "@components/chatbox-header";
+import OnlineUsers from "@components/online-users";
+
 import "./styles.css";
 
 const ChatBox = () => {

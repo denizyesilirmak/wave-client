@@ -1,11 +1,11 @@
 import "./styles.css";
 
-import { ReactComponent as CameraOn } from "../../assets/icons/video-on.svg";
-import { ReactComponent as CameraOff } from "../../assets/icons/video-off.svg";
-import { ReactComponent as MicrophoneOn } from "../../assets/icons/mic-on.svg";
-import { ReactComponent as MicrophoneOff } from "../../assets/icons/mic-off.svg";
-import { ReactComponent as ShareScreenOn } from "../../assets/icons/screen-on.svg";
-import { ReactComponent as ShareScreenOf } from "../../assets/icons/screen-off.svg";
+import { ReactComponent as CameraOn } from "@assets/icons/video-on.svg";
+import { ReactComponent as CameraOff } from "@assets/icons/video-off.svg";
+import { ReactComponent as MicrophoneOn } from "@assets/icons/mic-on.svg";
+import { ReactComponent as MicrophoneOff } from "@assets/icons/mic-off.svg";
+import { ReactComponent as ShareScreenOn } from "@assets/icons/screen-on.svg";
+import { ReactComponent as ShareScreenOf } from "@assets/icons/screen-off.svg";
 
 import VideoControlButton from "../video-control-button";
 import { useState } from "react";

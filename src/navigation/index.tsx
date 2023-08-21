@@ -1,11 +1,13 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./layout";
-import CreateSession from "../screens/create-session";
-import VideoConference from "../screens/video-conference";
-import Error from "../screens/error";
-import Settings from "../screens/settings";
-import Login from "../screens/login";
+
+//screens
+import CreateSession from "@screens/create-session";
+import VideoConference from "@screens/video-conference";
+import Error from "@screens/error";
+import Settings from "@screens/settings";
+import Login from "@screens/login";
 
 const router = createBrowserRouter([
   {

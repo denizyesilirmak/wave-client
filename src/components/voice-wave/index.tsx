@@ -1,9 +1,9 @@
 import { useEffect } from "react";
+
 import "./styles.css";
 
 const VoiceWave = () => {
   useEffect(() => {
-    //generate wave path data from mic input
     navigator.mediaDevices
       .getUserMedia({ video: false, audio: true })
       .then((stream) => {
@@ -16,7 +16,6 @@ const VoiceWave = () => {
         const dataArray = new Uint8Array(bufferLength);
         const svg = document.querySelector("#wave-svg");
 
-        //rects
         const rects = svg.querySelectorAll("rect");
 
         const rectMaxHeight = 60;

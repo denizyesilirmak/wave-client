@@ -1,9 +1,8 @@
-import { useChatStore } from "../../store/chatStore";
-import ChatBubble from "../chat-bubble";
+import { useChatStore } from "@store/chatStore";
+import ChatBubble from "@components/chat-bubble";
 import "./styles.css";
 
 const ChatMessages = () => {
-  //get messages from store
   const messages = useChatStore((state) => state.messages);
 
   return (

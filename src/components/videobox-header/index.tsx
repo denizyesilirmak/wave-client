@@ -1,8 +1,8 @@
 import "./styles.css";
-import { ReactComponent as Topic } from "../../assets/icons/topic.svg";
 
-import { ReactComponent as Copy } from "../../assets/icons/copy.svg";
-import { ReactComponent as Group } from "../../assets/icons/group.svg";
+import { ReactComponent as Topic } from "@assets/icons/topic.svg";
+import { ReactComponent as Copy } from "@assets/icons/copy.svg";
+import { ReactComponent as Group } from "@assets/icons/group.svg";
 
 const VideoBoxHeader = ({ title }: { title: string }) => {
   return (

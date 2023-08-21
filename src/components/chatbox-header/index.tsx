@@ -1,4 +1,4 @@
-import { ReactComponent as Pen } from "../../assets/icons/pen.svg";
+import { ReactComponent as Pen } from "@assets/icons/pen.svg";
 import "./styles.css";
 
 type ChatBoxHeaderProps = {

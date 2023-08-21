@@ -1,10 +1,10 @@
+import { useState } from "react";
+
 import "./styles.css";
 
-import { ReactComponent as SendIcon } from "../../assets/icons/send.svg";
-import { useState } from "react";
-import { addMessage } from "../../store/chatStore";
-
-import { MOCK_USERS } from "../../mocks/users";
+import { ReactComponent as SendIcon } from "@assets/icons/send.svg";
+import { addMessage } from "@store/chatStore";
+import { MOCK_USERS } from "@mocks/users";
 
 const ChatInput = () => {
   const [message, setMessage] = useState("");

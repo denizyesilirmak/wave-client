@@ -1,8 +1,9 @@
+import { useEffect } from "react";
+
 import "./styles.css";
 
-import VideoBoxHeader from "../videobox-header";
-import VideoControls from "../video-controls";
-import { useEffect } from "react";
+import VideoBoxHeader from "@components/videobox-header";
+import VideoControls from "@components/video-controls";
 
 const VideoBox = () => {
   useEffect(() => {
@@ -26,11 +27,7 @@ const VideoBox = () => {
         <div className="videobox-content">
           <div className="videobox-content-video">
             <VideoControls />
-            <video
-              autoPlay
-              muted
-              loop
-            />
+            <video autoPlay muted loop />
           </div>
         </div>
       </div>

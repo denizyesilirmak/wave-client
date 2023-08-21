@@ -1,9 +1,9 @@
 import React from "react";
 import "./styles.css";
 
-import WaveLogo from "../../assets/images/logo-small.png";
+import WaveLogo from "@assets/images/logo-small.png";
 
-import { ReactComponent as Logout } from "../../assets/icons/logout.svg";
+import { ReactComponent as Logout } from "@assets/icons/logout.svg";
 
 import { SIDEBAR_MENU } from "./constant";
 import { useNavigate } from "react-router-dom";

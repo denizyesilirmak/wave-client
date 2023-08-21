@@ -1,5 +1,6 @@
-import { MOCK_USERS } from "../../mocks/users";
-import { useOnlineUsersStore } from "../../store/onlineUsersStore";
+import { MOCK_USERS } from "@mocks/users";
+import { useOnlineUsersStore } from "@store/onlineUsersStore";
+
 import "./styles.css";
 
 const OnlineUsers = () => {

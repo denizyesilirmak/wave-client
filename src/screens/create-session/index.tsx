@@ -3,7 +3,7 @@ import Seperator from "../../components/seperator";
 import { MOCK_USERS } from "../../mocks/users";
 import "./styles.css";
 
-import { ReactComponent as AddPerson } from "../../assets/icons/add-person.svg";
+import { ReactComponent as AddPerson } from "@assets/icons/add-person.svg";
 
 type User = {
   name: string;
