@@ -11,3 +11,13 @@ Main goal of wave is to provide a simple and easy to use tool for team members t
 - [x] Screen Sharing
 
 ## Installation
+
+```bash
+git clone 
+cd wave-client
+npm install
+npm run dev
+```
+
+## Roadmap
+

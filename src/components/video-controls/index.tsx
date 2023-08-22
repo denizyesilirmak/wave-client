@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./styles.css";
 
 import { ReactComponent as CameraOn } from "@assets/icons/video-on.svg";
@@ -7,9 +8,8 @@ import { ReactComponent as MicrophoneOff } from "@assets/icons/mic-off.svg";
 import { ReactComponent as ShareScreenOn } from "@assets/icons/screen-on.svg";
 import { ReactComponent as ShareScreenOf } from "@assets/icons/screen-off.svg";
 
-import VideoControlButton from "../video-control-button";
-import { useState } from "react";
-import VoiceWave from "../voice-wave";
+import VideoControlButton from "@components/video-control-button";
+import VoiceWave from "@components/voice-wave";
 
 const VideoControls = () => {
   const [cameraState, setCameraState] = useState(true);

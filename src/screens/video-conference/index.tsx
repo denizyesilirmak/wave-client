@@ -1,5 +1,5 @@
-import ChatBox from "../../components/chatbox";
-import VideoBox from "../../components/videobox";
+import ChatBox from "@components/chatbox";
+import VideoBox from "@components/videobox";
 
 const VideoConference = () => {
   return (

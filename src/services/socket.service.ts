@@ -53,4 +53,6 @@ class SocketService {
 
 const socketService = new SocketService();
 
+Object.freeze(socketService);
+
 export default socketService;

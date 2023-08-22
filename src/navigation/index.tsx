@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./layout";
 
-//screens
 import CreateSession from "@screens/create-session";
 import VideoConference from "@screens/video-conference";
 import Error from "@screens/error";
