@@ -4,6 +4,7 @@ import "./styles.css";
 
 import VideoBoxHeader from "@components/videobox-header";
 import VideoControls from "@components/video-controls";
+import ReactionPlayer from "@components/reaction-player";
 
 const VideoBox = () => {
   useEffect(() => {
@@ -27,6 +28,7 @@ const VideoBox = () => {
         <div className="videobox-content">
           <div className="videobox-content-video">
             <VideoControls />
+            <ReactionPlayer />
             <video autoPlay muted loop />
           </div>
         </div>

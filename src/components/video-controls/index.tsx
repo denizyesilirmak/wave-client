@@ -10,6 +10,7 @@ import { ReactComponent as ShareScreenOf } from "@assets/icons/screen-off.svg";
 
 import VideoControlButton from "@components/video-control-button";
 import VoiceWave from "@components/voice-wave";
+import ReactionButtons from "../reaction-buttons";
 
 const VideoControls = () => {
   const [cameraState, setCameraState] = useState(true);
@@ -19,7 +20,7 @@ const VideoControls = () => {
   return (
     <div className="videobox-controls">
       <VideoControlButton
-        iconOn={CameraOn}
+        iconOn={CameraOn} 
         iconOff={CameraOff}
         active={cameraState}
         onClick={() => setCameraState(!cameraState)}
@@ -37,6 +38,7 @@ const VideoControls = () => {
         onClick={() => setShareScreenState(!shareScreenState)}
       />
       <VoiceWave />
+      <ReactionButtons />
     </div>
   );
 };

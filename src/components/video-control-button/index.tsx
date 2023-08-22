@@ -1,8 +1,13 @@
+import { FunctionComponent, SVGProps } from "react";
 import "./styles.css";
 
 type VideoControlButtonProps = {
-  iconOn: () => JSX.Element;
-  iconOff: () => JSX.Element;
+  iconOn: FunctionComponent<
+    SVGProps<SVGSVGElement> & { title?: string | undefined }
+  >;
+  iconOff: FunctionComponent<
+    SVGProps<SVGSVGElement> & { title?: string | undefined }
+  >;
   active?: boolean;
   onClick?: () => void;
 };
