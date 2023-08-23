@@ -1,17 +1,5 @@
-import { FunctionComponent, SVGProps } from "react";
 import "./styles.css";
-
-type VideoControlButtonProps = {
-  iconOn: FunctionComponent<
-    SVGProps<SVGSVGElement> & { title?: string | undefined }
-  >;
-  iconOff: FunctionComponent<
-    SVGProps<SVGSVGElement> & { title?: string | undefined }
-  >;
-  active?: boolean;
-  onClick?: () => void;
-  popOverText?: string;
-};
+import { VideoControlButtonProps } from "./types";
 
 const VideoControlButton = ({
   iconOn,
@@ -26,7 +14,9 @@ const VideoControlButton = ({
       onClick={onClick}
       className={`video-controls-button ${active ? "active" : ""} `}
     >
-      <div className="video-control-icon-wrapper">{active ? iconOn() : iconOff()}</div>
+      <div className="video-control-icon-wrapper">
+        {active ? iconOn() : iconOff()}
+      </div>
     </div>
   );
 };

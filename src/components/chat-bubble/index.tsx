@@ -1,10 +1,6 @@
 import { colorGenerator } from "../../utils/color-generator";
 import "./styles.css";
-
-type ChatBubbleProps = {
-  from: string;
-  messageBody: string;
-};
+import { ChatBubbleProps } from "./types";
 
 const ChatBubble = ({ from, messageBody }: ChatBubbleProps) => {
   return (

@@ -9,12 +9,7 @@ import { SIDEBAR_MENU } from "./constant";
 import { useNavigate } from "react-router-dom";
 import { useSocketConnected } from "@/store/app.store";
 import { useTranslation } from "react-i18next";
-
-type SidebarItem = {
-  title: string;
-  link: string;
-  icon: React.FC;
-};
+import { SidebarItem } from "./types";
 
 const Sidebar: React.FC = () => {
   const [active, setActive] = React.useState(0);

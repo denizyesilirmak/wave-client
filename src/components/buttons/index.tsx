@@ -1,14 +1,5 @@
 import "./styles.css";
-
-interface ButtonProps {
-  label?: string;
-  isActive?: boolean;
-  onClick?: () => void;
-}
-
-interface ButtonGroupProps {
-  children: React.ReactNode;
-}
+import { ButtonGroupProps, ButtonProps } from "./types";
 
 const Button = ({ label, isActive, onClick }: ButtonProps) => {
   return (

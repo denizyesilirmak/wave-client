@@ -2,7 +2,7 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import "./styles.css";
 
 import { reactionAnimations } from "@/assets/animations";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 const ReactionPlayer = () => {
   const lottieRef = useRef(
