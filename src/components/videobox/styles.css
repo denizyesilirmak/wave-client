@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: var(--lighter-gray);
+    background-color: var(--background-default);
     border-radius: 14px;
     overflow: hidden;
 }

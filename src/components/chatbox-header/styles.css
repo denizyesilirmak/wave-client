@@ -42,7 +42,7 @@
 }
 
 .chatbox-typing-text {
-    color: var(--secondary-color);
+    color: var(--font-color-default);
 }
 
 .dot {

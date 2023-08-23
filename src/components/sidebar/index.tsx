@@ -50,7 +50,7 @@ const Sidebar: React.FC = () => {
         ))}
       </div>
       <div className="sidebar-footer">
-        <div className="sidebar-item">
+        <div className="sidebar-item" onClick={() => navigate("login")}>
           <Logout />
         </div>
       </div>

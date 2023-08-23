@@ -18,7 +18,8 @@
     color: var(--tertiary-color);
     text-align: center;
     padding: 30px;
-    background: var(--background-default);
+    background: var(--background-color-secondary);
+    color: var(--font-color-default);
 }
 
 .login-panel-outline{

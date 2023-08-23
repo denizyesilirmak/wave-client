@@ -15,6 +15,8 @@ export const THEMES = {
     "--tertiary-color": "#2c3e50",
     "--light-gray": "#f1f1f5",
     "--lighter-gray": "#f7f7f9",
+    "--font-color-default": "#000000",
+    "--background-color-secondary": "#f1f1f5",
   },
   dark: {
     name: "dark",
@@ -25,6 +27,8 @@ export const THEMES = {
     "--tertiary-color": "#2c3e50",
     "--light-gray": "#f1f1f5",
     "--lighter-gray": "#f7f7f9",
+    "--font-color-default": "#ffffff",
+    "--background-color-secondary": "#445168",
   },
 };
 
