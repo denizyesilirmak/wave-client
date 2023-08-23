@@ -8,7 +8,7 @@ const OnlineUsers = () => {
   const { t } = useTranslation();
 
   const onlineUsers = useOnlineUsersStore((state) => state.onlineUsers);
-  const onlineUsersArray = Object.values(onlineUsers);
+  const onlineUsersArray = Object.values(onlineUsers || {});
 
   const allUsers = MOCK_USERS.map((user) => {
     const isOnline = onlineUsersArray.find(
@@ -18,7 +18,7 @@ const OnlineUsers = () => {
       ...user,
       isOnline: !!isOnline,
     };
-  }).sort((a, b) => (a.isOnline ? -1 : 1));
+  }).sort((a) => (a.isOnline ? -1 : 1));
 
   return (
     <div className="online-users">

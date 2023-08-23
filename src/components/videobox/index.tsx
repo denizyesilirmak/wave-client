@@ -8,12 +8,12 @@ import ReactionPlayer from "@components/reaction-player";
 
 const VideoBox = () => {
   useEffect(() => {
-    //camera and mic access
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
         const video = document.querySelector("video");
-        // @ts-ignore
+        if (!video) return;
+
         video.srcObject = stream;
       })
       .catch((err) => {

@@ -3,8 +3,6 @@ import Seperator from "../../components/seperator";
 import { MOCK_USERS } from "../../mocks/users";
 import "./styles.css";
 
-import { ReactComponent as AddPerson } from "@assets/icons/add-person.svg";
-
 type User = {
   name: string;
   email: string;
@@ -17,11 +15,11 @@ const CreateSession = () => {
   const [newUser, setNewUser] = useState<User | null>(null);
   const [sessionUsers, setSessionUsers] = useState<User[]>([]);
 
-  const onDragStart = (e: any, user) => {
+  const onDragStart = (e: DragEvent, user) => {
     setDraggingUser(user);
   };
 
-  const onDragEnd = (e: any, user) => {
+  const onDragEnd = (e: DragEvent, user) => {
     console.log(newUser);
     if (!sessionUsers.includes(user)) {
       setSessionUsers([...sessionUsers, user]);
@@ -29,18 +27,17 @@ const CreateSession = () => {
     }
   };
 
-  const onDragEnter = (e: any, user) => {
+  const onDragEnter = (e: DragEvent, user) => {
     e.preventDefault();
     e.stopPropagation();
     setNewUser(user);
   };
 
-  const onDragLeave = (e: any, user) => {
-    // console.log(e);
+  const onDragLeave = () => {
     setNewUser(null);
   };
 
-  const onDrawOver = (e: any, user) => {};
+  const onDrawOver = () => {};
 
   return (
     <div className="create-session-container">
@@ -49,7 +46,7 @@ const CreateSession = () => {
           <div className="contacts-header">Team</div>
           <Seperator />
           {MOCK_USERS.filter((user) => !sessionUsers.includes(user)).map(
-            (user, index) => (
+            (user) => (
               <div
                 draggable
                 key={user.id}

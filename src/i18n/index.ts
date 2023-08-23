@@ -1,9 +1,9 @@
 import i18n from "i18next";
-import { useTranslation, initReactI18next } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 
-import tr_strings from "./strings/tr.json";
 import en_strings from "./strings/en.json";
 import it_strings from "./strings/it.json";
+import tr_strings from "./strings/tr.json";
 
 export const LANGUAGES = {
   ENGLISH: {
