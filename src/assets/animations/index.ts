@@ -4,6 +4,5 @@ import Hearts1 from "./hearts1.json";
 
 export const reactionAnimations = {
   fireworks: FireworksAnimation1,
-  fireworks2: FireworksAnimation2,
   hearts1: Hearts1,
 };

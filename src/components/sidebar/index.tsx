@@ -8,6 +8,7 @@ import { ReactComponent as Logout } from "@assets/icons/logout.svg";
 import { SIDEBAR_MENU } from "./constant";
 import { useNavigate } from "react-router-dom";
 import { useSocketConnected } from "@/store/app.store";
+import { useTranslation } from "react-i18next";
 
 type SidebarItem = {
   title: string;
@@ -18,6 +19,7 @@ type SidebarItem = {
 const Sidebar: React.FC = () => {
   const [active, setActive] = React.useState(0);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const socketConnected = useSocketConnected();
 
@@ -43,7 +45,7 @@ const Sidebar: React.FC = () => {
             onClick={() => handleClick(item, index)}
           >
             <item.icon />
-            <span className="sidebar-item-label">{item.title}</span>
+            <span className="sidebar-item-label">{t(item.title)}</span>
           </div>
         ))}
       </div>

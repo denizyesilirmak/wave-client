@@ -4,17 +4,17 @@ import { ReactComponent as SettingsIcon } from "@assets/icons/settings.svg";
 
 export const SIDEBAR_MENU = [
   {
-    title: "New Session",
+    title: "new-session",
     icon: CreateIcon,
     link: "/create-session",
   },
   {
-    title: "Meeting",
+    title: "meeting",
     icon: CameraIcon,
     link: "/video-conference",
   },
   {
-    title: "Settings",
+    title: "settings",
     icon: SettingsIcon,
     link: "/settings",
   },
