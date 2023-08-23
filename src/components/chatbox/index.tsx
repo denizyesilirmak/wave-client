@@ -4,13 +4,16 @@ import ChatBoxHeader from "@components/chatbox-header";
 import OnlineUsers from "@components/online-users";
 
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 const ChatBox = () => {
+  const { t } = useTranslation();
+
   return (
     <div className="chatbox-container">
       <div className="chatbox">
         <ChatBoxHeader
-          title="Group Chat"
+          title={t("group-chat")}
           writingList={["Deniz", "Kemal", "Pelin", "Mehmet", "Ayşe"]}
         />
         <OnlineUsers />

@@ -7,5 +7,8 @@
     "theme": "Theme",
     "new-session": "New Session",
     "meeting": "Meeting",
-    "settings": "Settings"
+    "settings": "Settings",
+    "group-chat": "Group Chat",
+    "participants": "Participants",
+    "type-a-message": "Type a message"
 }

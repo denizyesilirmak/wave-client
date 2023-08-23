@@ -2,10 +2,12 @@ import { MOCK_USERS } from "@mocks/users";
 import { useOnlineUsersStore } from "@store/onlineUsersStore";
 
 import "./styles.css";
+import { useTranslation } from "react-i18next";
 
 const OnlineUsers = () => {
-  const onlineUsers = useOnlineUsersStore((state) => state.onlineUsers);
+  const { t } = useTranslation();
 
+  const onlineUsers = useOnlineUsersStore((state) => state.onlineUsers);
   const onlineUsersArray = Object.values(onlineUsers);
 
   const allUsers = MOCK_USERS.map((user) => {
@@ -20,7 +22,7 @@ const OnlineUsers = () => {
 
   return (
     <div className="online-users">
-      <span className="online-users-title"> Participants </span>
+      <span className="online-users-title"> {t("participants")} </span>
       <div className="online-users-list">
         {allUsers.map((user) => (
           <div key={user.id} className="online-user">
