@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { DragEvent, useState } from "react";
 import Seperator from "../../components/seperator";
 import { MOCK_USERS } from "../../mocks/users";
 import "./styles.css";
@@ -15,19 +15,20 @@ const CreateSession = () => {
   const [newUser, setNewUser] = useState<User | null>(null);
   const [sessionUsers, setSessionUsers] = useState<User[]>([]);
 
-  const onDragStart = (e: DragEvent, user) => {
+  const onDragStart = (e: DragEvent<HTMLDivElement>, user: User | null) => {
     setDraggingUser(user);
   };
 
-  const onDragEnd = (e: DragEvent, user) => {
-    console.log(newUser);
+  const onDragEnd = (e: DragEvent<HTMLDivElement>, user: User | null) => {
+    if (!user) return;
+
     if (!sessionUsers.includes(user)) {
       setSessionUsers([...sessionUsers, user]);
       setDraggingUser(null);
     }
   };
 
-  const onDragEnter = (e: DragEvent, user) => {
+  const onDragEnter = (e: DragEvent<HTMLDivElement>, user: User | null) => {
     e.preventDefault();
     e.stopPropagation();
     setNewUser(user);
@@ -69,12 +70,12 @@ const CreateSession = () => {
         <div
           className="contacts"
           onDragEnter={(event) => onDragEnter(event, draggingUser)}
-          onDragLeave={(event) => onDragLeave(event, draggingUser)}
-          onDragOver={(event) => onDrawOver(event, draggingUser)}
+          onDragLeave={() => onDragLeave()}
+          onDragOver={() => onDrawOver()}
         >
           <div className="contacts-header">Session</div>
           <Seperator />
-          {sessionUsers.map((user, index) => (
+          {sessionUsers.map((user) => (
             <div key={user.id} className={`contact`}>
               <div className="contact-name">{user.name}</div>
               <div className="contact-email">{user.email}</div>
