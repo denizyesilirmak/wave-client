@@ -10,5 +10,13 @@
     "settings": "Impostazioni",
     "group-chat": "Chat di Gruppo",
     "participants": "Partecipanti",
-    "type-a-message": "Scrivi un messaggio"
+    "type-a-message": "Scrivi un messaggio",
+    "turn-on-camera": "Accendi la Fotocamera",
+    "turn-on-mic": "Accendi il Mic",
+    "turn-on-screen-share": "Accendi la Condivisione dello Schermo",
+    "turn-off-camera": "Spegni la Fotocamera",
+    "turn-off-mic": "Spegni il Mic",
+    "turn-off-screen-share": "Spegni la Condivisione dello Schermo",
+    "turn-on-full-screen": "Accendi il Tutto Schermo",
+    "turn-off-full-screen": "Spegni il Tutto Schermo"
 }

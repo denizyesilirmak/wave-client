@@ -10,5 +10,13 @@
     "settings": "Settings",
     "group-chat": "Group Chat",
     "participants": "Participants",
-    "type-a-message": "Type a message"
+    "type-a-message": "Type a message",
+    "turn-on-camera": "Turn on Camera",
+    "turn-on-mic": "Turn on Mic",
+    "turn-on-screen-share": "Turn on Screen Share",
+    "turn-off-camera": "Turn off Camera",
+    "turn-off-mic": "Turn off Mic",
+    "turn-off-screen-share": "Turn off Screen Share",
+    "turn-on-full-screen": "Turn on Full Screen",
+    "turn-off-full-screen": "Turn off Full Screen"
 }

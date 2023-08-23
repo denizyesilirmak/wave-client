@@ -10,5 +10,13 @@
     "settings": "Ayarlar",
     "group-chat": "Grup Sohbeti",
     "participants": "Katılımcılar",
-    "type-a-message": "Bir mesaj yazın"
+    "type-a-message": "Bir mesaj yazın",
+    "turn-on-camera": "Kamerayı Aç",
+    "turn-on-mic": "Mikrofonu Aç",
+    "turn-on-screen-share": "Ekran Paylaşımını Aç",
+    "turn-off-camera": "Kamerayı Kapat",
+    "turn-off-mic": "Mikrofonu Kapat",
+    "turn-off-screen-share": "Ekran Paylaşımını Kapat",
+    "turn-on-full-screen": "Tam Ekranı Aç",
+    "turn-off-full-screen": "Tam Ekranı Kapat"
 }
