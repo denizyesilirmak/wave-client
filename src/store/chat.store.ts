@@ -13,7 +13,13 @@ type Message = {
   id?: string;
 };
 
-export const useChatStore = create((set) => ({
+interface ChatStore {
+  messages: Message[];
+  addMessage: (message: Message) => void;
+  removeMessage: (message: Message) => void;
+}
+
+export const useChatStore = create<ChatStore>((set) => ({
   messages: messageArray,
   addMessage: (message: Message) =>
     set((state) => ({ messages: [...state.messages, message] })),

@@ -1,4 +1,4 @@
-import { useChatStore } from "@store/chatStore";
+import { useChatStore } from "@/store/chat.store";
 import ChatBubble from "@components/chat-bubble";
 import "./styles.css";
 

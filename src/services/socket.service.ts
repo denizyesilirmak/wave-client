@@ -3,7 +3,7 @@ import { io } from "socket.io-client";
 import { type SocketType } from "./socket.service.types";
 
 import { MOCK_USERS } from "@mocks/users";
-import { setOnlineUsers } from "@store/onlineUsersStore";
+import { setOnlineUsers } from "@/store/onlineUsers.store";
 import { useAppStore } from "@/store/app.store";
 
 class SocketService {

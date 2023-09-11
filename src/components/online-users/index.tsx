@@ -1,5 +1,5 @@
 import { MOCK_USERS } from "@mocks/users";
-import { useOnlineUsersStore } from "@store/onlineUsersStore";
+import { useOnlineUsersStore } from "@/store/onlineUsers.store";
 
 import "./styles.css";
 import { useTranslation } from "react-i18next";

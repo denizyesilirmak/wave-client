@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./styles.css";
 
 import { ReactComponent as SendIcon } from "@assets/icons/send.svg";
-import { addMessage } from "@store/chatStore";
+import { addMessage } from "@/store/chat.store";
 import { MOCK_USERS } from "@mocks/users";
 import { useTranslation } from "react-i18next";
 
@@ -23,10 +23,9 @@ const ChatInput = () => {
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter" && !e.shiftKey && message !== "") {
-      if (message.trim() === "") return;
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
       sendMessage();
-      setMessage("");
     }
   };
 

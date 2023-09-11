@@ -2,18 +2,18 @@ import Lottie, { LottieRefCurrentProps } from "lottie-react";
 import "./styles.css";
 
 import { reactionAnimations } from "@/assets/animations";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ReactionPlayer = () => {
   const lottieRef = useRef(
     null
   ) as React.MutableRefObject<LottieRefCurrentProps | null>;
+
   const [animationData, setAnimationData] = useState(
     reactionAnimations.fireworks
   );
 
   const handlePlay = () => {
-    console.log(lottieRef.current);
     lottieRef.current?.setSpeed(1);
 
     const animationNameArray = Object.keys(reactionAnimations);
@@ -25,9 +25,15 @@ const ReactionPlayer = () => {
     lottieRef.current?.goToAndPlay(0, true);
   };
 
+  useEffect(() => {
+    lottieRef.current?.setSpeed(0);
+    lottieRef.current?.goToAndStop(0, true);
+  }, []);
+
   return (
     <div className="reaction-player">
       <Lottie
+        autoplay={false}
         loop={false}
         lottieRef={lottieRef}
         animationData={animationData}

@@ -4,7 +4,7 @@
     margin-top: 14px;
     font-size: 14px;
     font-weight: bold;
-    height: 46px;
+    height: 40px;
     overflow: hidden;
     transition: height 0.3s ease-in-out;
     transition-delay: 0.2s;
@@ -12,7 +12,7 @@
 }
 
 .online-users .online-users-title {
-    background-color: #ffffff;
+    background-color: var(--tertiary-color);
     padding: 3px 10px;
     border-radius: 5px;
     cursor: pointer;

@@ -5,10 +5,13 @@ Main goal of wave is to provide a simple and easy to use tool for team members t
 
 ## Features
 
-- [x] Chat
-- [x] Voice Chat
-- [x] Video Chat
-- [x] Screen Sharing
+- [ ] Chat
+- [ ] Voice Chat
+- [ ] Video Chat
+- [ ] Screen Sharing
+- [x] Themes
+- [ ] Custom Emojis
+- [ ] Code Snippets
 
 ## Installation
 
@@ -18,6 +21,3 @@ cd wave-client
 npm install
 npm run dev
 ```
-
-## Roadmap
-
