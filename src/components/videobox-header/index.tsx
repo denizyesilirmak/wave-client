@@ -3,8 +3,11 @@ import "./styles.css";
 import { ReactComponent as Topic } from "@assets/icons/topic.svg";
 import { ReactComponent as Copy } from "@assets/icons/copy.svg";
 import { ReactComponent as Group } from "@assets/icons/group.svg";
+import { useTranslation } from "react-i18next";
 
 const VideoBoxHeader = ({ title }: { title: string }) => {
+  const { t } = useTranslation();
+
   return (
     <div className="videobox-header">
       <div className="video-header-row">
@@ -14,11 +17,11 @@ const VideoBoxHeader = ({ title }: { title: string }) => {
       <div className="video-header-row">
         <div className="copy-link">
           <Copy className="copy-link-icon" />
-          <span>copy link</span>
+          <span>{t('copy-meeting-link')}</span>
         </div>
         <div className="copy-link">
           <Group className="copy-link-icon" />
-          <span>participants</span>
+          <span>{t("participants")}</span>
         </div>
       </div>
     </div>

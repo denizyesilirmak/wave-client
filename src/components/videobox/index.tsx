@@ -1,25 +1,19 @@
-import { useEffect } from "react";
-
 import "./styles.css";
 
-import VideoBoxHeader from "@components/videobox-header";
 import VideoControls from "@components/video-controls";
-import ReactionPlayer from "@components/reaction-player";
+import VideoBoxHeader from "@components/videobox-header";
+
+import useAgoraStore from "@/store/agora.store";
+import { AgoraVideoPlayer } from "agora-rtc-react";
+import { useMicrophoneAndCameraTracks } from "@/services/agora.service";
 
 const VideoBox = () => {
-  useEffect(() => {
-    navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
-      .then((stream) => {
-        const video = document.querySelector("video");
-        if (!video) return;
+  const channelName = useAgoraStore((state) => state.agoraChannel);
+  const inCall = useAgoraStore((state) => state.inCall);
+  const users = useAgoraStore((state) => state.users);
+  const trackState = useAgoraStore((state) => state.trackState);
 
-        video.srcObject = stream;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+  const { tracks } = useMicrophoneAndCameraTracks();
 
   return (
     <div className="videobox-container">
@@ -28,8 +22,39 @@ const VideoBox = () => {
         <div className="videobox-content">
           <div className="videobox-content-video">
             <VideoControls />
-            <ReactionPlayer />
-            <video autoPlay muted loop />
+
+            {inCall && (
+              <div className="videos-all">
+                {trackState.video && (
+                  <div className="remote-video-container" id="local-player">
+                    <AgoraVideoPlayer
+                      style={{ height: "100%", width: "100%" }}
+                      className="vid"
+                      videoTrack={tracks[1]}
+                    />
+                  </div>
+                )}
+
+                {users.map((user) => {
+                  console.log("wave-user", user);
+                  return (
+                    <div
+                      key={user.uid}
+                      className="remote-video-container"
+                      id={`player-${user.uid}`}
+                    >
+                      <div className="remote-video-name">{user.uid}</div>
+                      <AgoraVideoPlayer
+                        style={{ height: "100%", width: "100%" }}
+                        className="vid"
+                        videoTrack={user.videoTrack}
+                        key={user.uid}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         </div>
       </div>

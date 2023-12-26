@@ -68,6 +68,16 @@
     border: 1px solid var(--primary-color);
 }
 
+.login-screen-input.error {
+    border: 1px solid red;
+}
+
+.login-screen-error {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
 .login-screen-button {
     width: 100%;
     border: none;

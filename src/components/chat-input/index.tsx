@@ -6,6 +6,7 @@ import { ReactComponent as SendIcon } from "@assets/icons/send.svg";
 import { addMessage } from "@/store/chat.store";
 import { MOCK_USERS } from "@mocks/users";
 import { useTranslation } from "react-i18next";
+import socketService from "@/services/socket.service";
 
 const ChatInput = () => {
   const [message, setMessage] = useState("");
@@ -26,6 +27,11 @@ const ChatInput = () => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
+      socketService.sendChatMessage(
+        message.trim(),
+        "deniz.yesilirmak@sisal.com",
+        "everyone"
+      );
     }
   };
 

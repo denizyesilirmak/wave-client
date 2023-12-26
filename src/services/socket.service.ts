@@ -2,18 +2,14 @@ import { io } from "socket.io-client";
 
 import { type SocketType } from "./socket.service.types";
 
-import { MOCK_USERS } from "@mocks/users";
-import { setOnlineUsers } from "@/store/onlineUsers.store";
 import { useAppStore } from "@/store/app.store";
+import { setOnlineUsers } from "@/store/onlineUsers.store";
 
 class SocketService {
   socket: SocketType;
 
   constructor() {
-    const randomUser =
-      MOCK_USERS[Math.floor(Math.random() * MOCK_USERS.length)];
-
-    this.socket = io("http://localhost:1133", {
+    this.socket = io("http://localhost:3000", {
       transports: ["websocket"],
       autoConnect: false,
       reconnection: true,
@@ -22,7 +18,7 @@ class SocketService {
       forceNew: true,
       timeout: 10000,
       query: {
-        user: JSON.stringify(randomUser),
+        user: JSON.stringify(localStorage.getItem("user") || null),
       },
     });
 
@@ -48,6 +44,18 @@ class SocketService {
 
   connect() {
     this.socket.connect();
+  }
+
+  sendMessage(message: string) {
+    this.socket.emit("message", message);
+  }
+
+  sendChatMessage(message: string, from: string, to: string) {
+    this.socket.emit("chat-message", {
+      message,
+      from,
+      to,
+    });
   }
 }
 

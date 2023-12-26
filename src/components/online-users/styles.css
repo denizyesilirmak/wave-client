@@ -12,7 +12,7 @@
 }
 
 .online-users .online-users-title {
-    background-color: var(--tertiary-color);
+    background-color: var(--background-color-secondary);
     padding: 3px 10px;
     border-radius: 5px;
     cursor: pointer;

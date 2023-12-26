@@ -33,7 +33,6 @@
 }
 
 .copy-link {
-    width: 100%;
     display: flex;
     background: var(--background-color-secondary);
     justify-content: flex-start;

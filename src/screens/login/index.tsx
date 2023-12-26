@@ -1,3 +1,4 @@
+import { setIsLogged, setUser } from "@/store/auth.store";
 import "./styles.css";
 import WaveLogo from "@assets/images/logo-small.png";
 import { useEffect, useRef, useState } from "react";
@@ -5,7 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
   const navigate = useNavigate();
 
@@ -29,12 +33,43 @@ const Login = () => {
   }, []);
 
   const handleLogin = () => {
+    const email = emailRef.current?.value;
+    const password = passwordRef.current?.value;
+    if (!email || !password) return;
+
     setLoading(true);
-    const timeout = setTimeout(() => {
+    fetchLogin(email, password);
+  };
+
+  const fetchLogin = async (email: string, password: string) => {
+    try {
+      const response = await fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!data.success) {
+        setLoading(false);
+        setError(true);
+        return;
+      }
+
+      console.log(data.data.token);
+
+      localStorage.setItem("token", data.data.token);
+      localStorage.setItem("user", JSON.stringify(data.data));
+      setUser(data.data);
+      setIsLogged(true);
+      navigate("/video-conference");
+    } catch (error) {
+      alert("Something went wrong");
       setLoading(false);
-      navigate("/create-session");
-    }, 2000);
-    return () => clearTimeout(timeout);
+    }
   };
 
   return (
@@ -52,20 +87,26 @@ const Login = () => {
           </h5>
 
           <input
+            ref={emailRef}
             type="email"
             placeholder="Sisal Email"
-            className="login-screen-input"
+            className={`login-screen-input ${error ? "error" : ""}`}
             autoCorrect="off"
             autoCapitalize="off"
             spellCheck="false"
             disabled={loading}
           />
           <input
+            ref={passwordRef}
             type="password"
             placeholder="Password"
-            className="login-screen-input"
+            className={`login-screen-input ${error ? "error" : ""}`}
             disabled={loading}
           />
+
+          <div className="login-screen-error">
+            {error && "Invalid email or password"}
+          </div>
 
           <button onClick={handleLogin} className="login-screen-button">
             Login
